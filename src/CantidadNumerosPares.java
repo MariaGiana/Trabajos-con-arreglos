@@ -19,8 +19,8 @@ public static void main(String[] args) {
         contador+=1;
     }
 }
-System.out.println("El arreglo tiene: "+ contador+ " numeros pares");
 imprimir_arreglo_int(arr);
+System.out.println("El arreglo tiene: "+ contador+ " numeros pares");
 
 }
 

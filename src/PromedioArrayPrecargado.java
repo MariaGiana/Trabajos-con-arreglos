@@ -1,5 +1,6 @@
 //Hacer un programa que dado un arreglo de enteros de tamaño 10 que se encuentra
 //precargado, imprima por pantalla el promedio de sus valores.
+import java.util.Random;
 
 public class PromedioArrayPrecargado{
 

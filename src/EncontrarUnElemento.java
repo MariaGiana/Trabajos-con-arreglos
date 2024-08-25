@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Random;
 
-public class EncontrarUnElemento(){
+public class EncontrarUnElemento{
     public static int MAX=10;
     public static final int MAXVALOR = 10;
     public static final int MINVALOR = 1;
@@ -18,15 +18,15 @@ public static void main(String[] args) {
 
     try {
         cargar_arreglo_aleatorio_int(arr);
-        System.out.println("elija un numero entero: ");
+        System.out.println("Elija un numero entero: ");
         numero=Integer.valueOf(entrada.readLine());
         pos=obtener_posicion_arreglo(arr,numero,pos);
         imprimir_arreglo_int(arr);
         if(pos<MAX){
-            System.out.println(numero+" existe y se encuentra en la posicion: "+pos);
+            System.out.println("El numero "+ numero + " existe y se encuentra en la posicion: "+pos);
 
         }else{
-            System.out.println(numero+" no esta en el array!");
+            System.out.println("El numero "+numero+" no está en el array!");
         }
         
     } catch (Exception e) {
@@ -36,13 +36,11 @@ public static void main(String[] args) {
 
 
 private static int obtener_posicion_arreglo(int[] arr, int numero, int pos) {
-        int posicion=0;
-    while (pos<MAX){ 
+        int posicion=0; 
         while ((posicion<MAX)&&(arr[posicion]!=numero)){
         posicion++; 
         pos++;
         }
-    }
     return posicion;
     }
 
@@ -61,3 +59,42 @@ public static void imprimir_arreglo_int(int [] arr){
     }
 }
 }
+
+
+
+/*ALTERNATIVA PARA EL MAIN Y LA FUNCION OBTENER POSICION ARREGLO:
+
+public static void main(String[] args) {
+        int[] arr = new int[MAX];
+        int pos;
+        int numero;
+        BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+
+        try {
+            cargar_arreglo_aleatorio_int(arr);
+            imprimir_arreglo_int(arr);
+
+            System.out.println("Elija un número entero: ");
+            numero = Integer.valueOf(entrada.readLine());
+            
+            pos = obtener_posicion_arreglo(arr, numero);
+
+            if (pos != -1) {
+                System.out.println("El número " + numero + " existe y se encuentra en la posición: " + pos);
+            } else {
+                System.out.println("El número " + numero + " no está en el array!");
+            }
+
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+
+    private static int obtener_posicion_arreglo(int[] arr, int numero) {
+        for (int i = 0; i < MAX; i++) {
+            if (arr[i] == numero) {
+                return i;
+            }
+        }
+        return -1; // Devuelve -1 si el número no se encuentra en el arreglo
+    } */
